@@ -1,0 +1,813 @@
+/*
+
+Author: Joao Garduño
+URL Author: https://joaogarduno.github.io/portfolio/
+Github Profile: https://github.com/joaogarduno
+Version: 1.0
+License:
+
+*/
+
+/* VARIABLES */
+:root{
+  /* ==================================
+    TYPOGRAPHY
+  ===================================== */
+  /* FONTS */
+  --font-style-titles: "Nunito Sans", sans-serif;--font-style-text: "Work Sans", sans-serif;
+
+  /* FONT SIZE */
+  --font-size-xxxs: 1.2rem;
+  --font-size-xxs: 1.4rem;
+  --font-size-xs: 1.5rem;
+  --font-size-sm: 1.6rem;
+  --font-size-smr: 1.8rem;
+  --font-size-smm: 2rem;
+  --font-size-sml: 2.5rem;
+  --font-size-md: 3rem;
+  --font-size-lg: 3.5rem;
+  --font-size-lgr: 4rem;
+  --font-size-lgm: 4.5rem;
+  --font-size-lgl: 5rem;
+  --font-size-xlg: 5.5rem;
+  --font-size-xxlg: 6rem;
+  --font-size-xxxlg: 6.5rem;
+  --font-size-xxxxlg: 7rem;
+
+  /* ==================================
+    COLORS
+  ===================================== */
+  /* COLORS */
+  --color-primary: #E5E1D6;
+  /* #F7F9F6 */
+  /* #F8F8FF */
+  --color-secondary: #9D582E;
+  /* #9D582E */
+  /* #6F5A3B */
+  /* #605132 */
+  --color-tertiary: #7C2A3C;
+  /* #570209 */
+  /* #7B2C3D */
+
+
+  /* COLOR - LETTERS */
+  --color-letter-primary: #020202;
+  /* #00001b */
+
+  /* COLOR - ELEMENTS */
+  --color-element-button: #9D582E;
+  /* #7C2A3C */
+  --color-element-section: #201f33;
+  
+}
+
+/* RESET - STYLES */
+*,
+*::after,
+*::before{
+  box-sizing: border-box;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, div{
+	display: block;
+}
+
+/* CHANGES - RESET CSS */
+html{
+  background-color: var(--color-primary);
+  color: var(--color-letter-primary);
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+body{
+  height: 100vh;
+  font-family: var(--font-style-text);
+  font-size: var(--font-size-sm);  
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* --------------------------------------
+  TITLES
+----------------------------------------- */
+h1, h2, h3, h4, h5, h6{
+  font-family: var(--font-style-titles);
+  font-size: var(--font-size-sml);
+  font-weight: bold;
+  letter-spacing: .3rem;
+  text-transform: capitalize;
+  /* text-transform: uppercase; */
+}
+/* --------------------------------------
+  SEMANTIC - HTML
+----------------------------------------- */
+header, nav, main, section, article, aside,
+figure, footer, div{
+  width: 100%;
+}
+/* --------------------------------------
+  TAGS - OTHERS
+----------------------------------------- */
+a{
+  text-decoration: none;
+}
+img{
+  max-width: 100%;
+  object-fit: cover;
+}
+button{
+  width: 12rem;
+  height: 3rem;
+  font-size: var(--font-size-xxxs);
+  font-weight: 500;
+  font-family: inherit;
+  letter-spacing: normal;
+  text-transform: capitalize;
+  border: none;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+/* ============================================== */
+/* CONTAINER */
+/* ============================================== */
+.container{
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ============================================== */
+/* MAIN - SECTION - ARTICLE - ASIDE - FOOTER */
+/* ============================================== */
+.mainContent{
+  display: grid;
+}
+.sectionContent{
+  margin: 2.5rem 0;
+}
+/* article{} */
+/* aside{} */
+/* footer{} */
+
+/* ============================================== */
+/* ROW & COLUMNS - CONTAINER */
+/* ============================================== */
+.row-container, .col-container{
+  max-width: 100%;
+}
+.row-container{
+  display: grid;
+  /* gap: 2.5rem 0; */
+  place-items: center;
+}
+.col-container{
+  overflow: hidden;
+  /* padding: 1.5rem 0; */
+}
+
+/* ============================================== */
+/* HEADER */
+/* ============================================== */
+.headerContent{
+  /* outline: 1px solid red; */
+  padding: 2rem 0;
+}
+figure.header__figure{
+  /* outline: 1px solid seagreen; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 80%; */
+}
+.header__figure img{
+  /* outline: 1px solid salmon; */
+  width: 80%;
+}
+
+/* ============================================== */
+/* MAIN - SECTION */
+/* ============================================== */
+.mainContent{
+  /* outline: 1px solid red; */
+  padding-bottom: 3rem;
+}
+
+/* --------------------------------------
+  SECTION - MESSAGE
+----------------------------------------- */
+/* .sectionContent{
+  outline: 1px solid red;
+  padding: 2rem 0;
+} */
+
+/* --------------------------------------
+  TITLE - COL-CONTAINER
+----------------------------------------- */
+.article__title{
+  /* outline: 1px solid royalblue; */
+  padding: 2rem 0;
+  /* vertical-align: baseline; */
+  /* height: 50vh; */
+  /* position: relative; */
+  
+}
+.article__title--h2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12rem;
+  font-weight: 700;
+  filter: drop-shadow(2px 2px 4px #999999);
+  /* font-size: var(--font-size-md); */
+  /* filter: drop-shadow(5px 5px 8px #999999); */
+}
+.article__title--h2 figure{
+  /* outline: 1px solid rosybrown; */
+  width: 50%;
+  margin: 0 auto;
+}
+.article__title--h2 figure img{
+  /* outline: 1px solid aqua; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(4px 4px 8px #999999);
+  filter: contrast(120%);
+}
+
+/* --------------------------------------
+  SUBTITLE & TEXT - COL-CONTAINER
+----------------------------------------- */
+.article__subtitle{
+  margin: 1.5rem 0;
+}
+.article__subtitle h3{
+  padding: 1rem;
+}
+.article__subtitle p{
+  margin: 2rem 0;
+}
+
+/* --------------------------------------
+  BUTTON - COL-CONTAINER
+----------------------------------------- */
+/* .article__subtitle--btnMenu{} */
+/* .subtitle__button{
+  margin: 2rem 0;
+  margin-top: 2rem;
+} */
+.subtitle__button button{
+  /* margin: 2rem 0; */
+  background-color: var(--color-element-button);
+  font-size: var(--font-size-xxs);
+  color: var(--color-primary);
+  border-radius: 3rem;
+  /* padding: 1rem; */
+  /* border: 1px solid var(--color-secondary); */
+  
+}
+/* .article__subtitle button{
+} */
+
+/* ============================================== */
+/* FOOTER */
+/* ============================================== */
+footer.footerContent *{
+  color: var(--color-primary);
+}
+.footerContent{
+  /* outline: 1px solid red; */
+  padding-top: 3rem;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  background-color: var(--color-tertiary);
+  font-size: var(--font-size-xxs);
+  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+  /* background: rgb(229,225,214);
+  background: linear-gradient(180deg, rgba(229,225,214,1) 0%, rgba(87,2,9,1) 50%); */
+  /* background-color: var(--color-element-button); */
+  /* padding: 2.5rem 0; */
+  /* color: var(--color-primary); */
+}
+
+/* --------------------------------------
+  SOCIAL ICONS - FOOTER
+----------------------------------------- */
+.footer__icons{
+  /* outline: 1px solid ghostwhite; */
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: var(--font-size-smm);
+  /* font-size: var(--font-size-smr); */
+}
+.footer__icons a{
+  /* outline: 1px solid ghostwhite; */
+  padding: .5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* color: azure; */
+}
+/* .footer__icons a span{} */
+/* .footer__icons a span i{} */
+/* .footer__icons span{
+  font-size: var(--font-size-smr);
+} */
+
+/* --------------------------------------
+  COPYRIGHTS - FOOTER
+----------------------------------------- */
+.footer__info{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 0;
+  /* font-size: var(--font-size-xxs); */
+  /* color: var(--color-primary); */
+  /* font-size: var(--font-size-xs); */
+  /* font-size: var(--font-size-xxxs); */
+}
+/* .footer__info span{} */
+/* .footer__info p{} */
+
+
+
+/* ============================================== */
+  /* MEDIAQUERIES */
+/* ============================================== */
+/* --------------------------------------
+  480PX
+----------------------------------------- */
+@media screen and (min-width: 480px){  
+  /* ============================= */
+  /* HEADER */
+  /* ============================= */
+  .header__figure img{
+    width: 60%;
+  }
+
+  /* ============================= */
+  /* MAIN - SECTION */
+  /* ============================= */
+  /* ------------------------------------
+    TITLE - COL-CONTAINER
+  ------------------------------------ */
+  /* .article__title{}   */
+  
+  .article__title--h2{
+    font-size: 13rem;
+  }
+  .article__title--h2 figure{
+    width: 40%;
+    margin: 0;
+  }
+  /* .article__title--h2 figure img{} */
+
+  /* ------------------------------------
+    SUBTITLE & TEXT - COL-CONTAINER
+  ------------------------------------ */
+  .article__subtitle h3{
+    font-size: var(--font-size-md);
+    /* padding: 2rem; */
+    
+  }
+  .article__subtitle p{
+    padding: 1rem;
+  }
+
+  /* ============================= */
+  /* FOOTER */
+  /* ============================= */
+  /* ------------------------------------
+    SOCIAL ICONS - FOOTER
+  ------------------------------------ */
+  .footer__icons{
+    /* justify-content: center; */
+    font-size: var(--font-size-sml);
+  }
+
+  /* ------------------------------------
+    COPYRIGHTS - FOOTER
+  ------------------------------------ */
+  .footer__info{
+    letter-spacing: .2rem;
+  }
+
+}
+
+/* --------------------------------------
+  576PX
+----------------------------------------- */
+@media screen and (min-width: 576px){
+  /* ============================= */
+  /* HEADER */
+  /* ============================= */
+  .header__figure img{
+    width: 50%;
+  }
+
+  /* ============================= */
+  /* MAIN - SECTION */
+  /* ============================= */
+  /* ------------------------------------
+    TITLE - COL-CONTAINER
+  ------------------------------------ */
+  .article__title--h2{
+    font-size: 15rem;
+  }
+  .article__title--h2 figure{
+    width: 35%;
+    /* margin: -2rem; */
+  }
+
+  /* ------------------------------------
+    SUBTITLE & TEXT - COL-CONTAINER
+  ------------------------------------ */
+  .article__subtitle h3{
+    padding: 2rem;
+  }
+  .article__subtitle p{
+    padding: 1.5rem;
+    font-size: var(--font-size-smr);
+  }  
+
+  /* ------------------------------------
+    BUTTON - COL-CONTAINER
+  ------------------------------------ */
+  .subtitle__button button{
+    width: 13rem;
+    height: 3.5rem;
+    font-size: var(--font-size-xs);
+    /* margin-left: 1.5rem; */
+    /* padding-left: 2rem; */
+
+  }
+
+  /* ============================= */
+  /* FOOTER */
+  /* ============================= */
+  /* ------------------------------------
+    SOCIAL ICONS - FOOTER
+  ------------------------------------ */
+  .footer__icons{
+    font-size: var(--font-size-md);
+  }
+}
+
+/* --------------------------------------
+  768PX
+----------------------------------------- */
+@media screen and (min-width: 768px){
+  /* ============================= */
+  /* CONTAINER */
+  /* ============================= */
+  .container{
+    width: 95%;
+    /* padding: 0 2rem; */
+  }
+
+  /* ============================= */
+  /* MAIN - SECTION */
+  /* ============================= */
+  /* ------------------------------------
+    ROW & COL - CONTAINER - MAIN - SECTION
+  ------------------------------------ */
+  .row__section{
+    grid-template: auto / repeat(2, 1fr);
+    /* grid-template: repeat(2, 1fr) / repeat(2, 1fr); */
+  }
+  .col__section--item-a{
+    grid-column: 2/3;
+    grid-row: 1/1;
+  }
+  .col__section--item-b{
+    grid-column: 1/2;
+    grid-row: 1/1;
+  }
+  .col__section--item-c{
+    grid-column: 1 / 3;
+    /* grid-row: 2; */
+    /* place-content: center; */
+    /* place-items: center; */
+    place-self: center;
+  }
+
+  /* ------------------------------------
+    TITLE - COL-CONTAINER
+  ------------------------------------ */
+  .article__title{
+    padding: 0;
+  }
+  .article__title--h2{
+    flex-flow: column wrap;
+    font-weight: 800;
+    /* font-size: 14rem */
+  }
+  .article__title--h2 figure{
+    width: 50%;
+    margin: -7rem;
+  }
+
+  /* ------------------------------------
+    SUBTITLE & TEXT - COL-CONTAINER
+  ------------------------------------ */
+  .article__subtitle{
+    margin: 0;
+  }
+  .article__subtitle h3{
+    font-size: var(--font-size-lg);
+  }
+  .article__subtitle p{
+    font-size: var(--font-size-smm);
+  }
+  
+  /* ------------------------------------
+    BUTTON - COL-CONTAINER
+  ------------------------------------ */
+  .subtitle__button button{
+    width: 14rem;
+    height: 4rem;
+    font-size: var(--font-size-sm);
+  }
+
+  /* ============================= */
+  /* FOOTER */
+  /* ============================= */
+  /* ------------------------------------
+  ROW & COLUMNS - CONTAINER - FOOTER
+  ------------------------------------ */
+  .row-footer{
+    grid-template: auto / repeat(2, 1fr);
+    place-items: center;
+    /* justify-items: center; */
+  }
+  /* .col-footer{} */
+  /* .col-footer-a{
+    grid-column: 2 / 3;
+  }
+  .col-footer-b{
+    grid-column: 1 / 2;
+  } */
+
+  /* ------------------------------------
+    SOCIAL ICONS - FOOTER
+  ------------------------------------ */
+  .footer__icons{
+    font-size: var(--font-size-lg);
+  }
+
+  /* ------------------------------------
+    COPYRIGHTS - FOOTER
+  ------------------------------------ */
+  .footer__info{
+    font-size: var(--font-size-xs);
+  }
+
+}
+
+/* --------------------------------------
+  992PX
+----------------------------------------- */
+@media screen and (min-width: 992px){
+  /* ============================= */
+  /* CONTAINER */
+  /* ============================= */
+  .container{
+    width: 90%;
+  }
+
+  /* ============================= */
+  /* HEADER */
+  /* ============================= */
+  .header__figure img{
+    width: 40%;
+  }
+
+  /* ============================= */
+  /* MAIN - SECTION */
+  /* ============================= */
+  /* ------------------------------------
+    TITLE - COL-CONTAINER
+  ------------------------------------ */
+  .article__title--h2{
+    font-size: 16rem;
+  }
+  .article__title--h2 figure{
+    width: 50%;
+  }
+
+  /* ------------------------------------
+    SUBTITLE & TEXT - COL-CONTAINER
+  ------------------------------------ */
+  .article__subtitle h3{
+    font-size: var(--font-size-lgr);
+  }
+  /* .article__subtitle p{
+    font-size: var(--font-size-sml);
+  } */
+
+  /* ------------------------------------
+    BUTTON - COL-CONTAINER
+  ------------------------------------ */
+  .subtitle__button button{
+    width: 15rem;
+    height: 4.5rem;
+    font-size: var(--font-size-smr);
+  }
+}
+
+/* --------------------------------------
+  1024PX
+----------------------------------------- */
+@media screen and (min-width: 1024px){
+  /* ============================= */
+  /* CONTAINER */
+  /* ============================= */
+  .container{
+    width: 85%;
+  }
+
+  /* ============================= */
+  /* MAIN - SECTION */
+  /* ============================= */
+  /* ------------------------------------
+    ROW & COL - CONTAINER - MAIN - SECTION
+  ------------------------------------ */
+  .row__section{
+    grid-template: auto / repeat(2, 1fr);
+    gap: 0 1.5rem;
+  }
+  .col__section--item-a{
+    grid-column: 1/2;
+    grid-row: 1/1;
+  }
+  .col__section--item-b{
+    grid-column: 2/3;
+    grid-row: 1/1;
+  }
+
+  /* ------------------------------------
+    TITLE - COL-CONTAINER
+  ------------------------------------ */
+  .article__title--h2{
+    font-size: 17rem;
+    /* flex-direction: row; */
+    flex-flow: row nowrap;
+  }
+  .article__title--h2 figure{
+    width: 60%;
+    margin: 0;
+  }
+
+  /* ------------------------------------
+    SUBTITLE & TEXT - COL-CONTAINER
+  ------------------------------------ */
+  .article__subtitle h3{
+    font-size: var(--font-size-lgm);
+  }
+
+  /* ------------------------------------
+    BUTTON - COL-CONTAINER
+  ------------------------------------ */
+  .subtitle__button button{
+    width: 16rem;
+    height: 5rem;
+    /* font-size: var(--font-size-smm); */
+  }
+
+}
+
+/* --------------------------------------
+  1200PX
+----------------------------------------- */
+@media screen and (min-width: 1200px){
+  /* ============================= */
+  /* CONTAINER */
+  /* ============================= */
+  .container{
+    width: 80%;
+  }
+}
+
+/* --------------------------------------
+  1400PX
+----------------------------------------- */
+/* @media screen and (min-width: 1400px){} */
+
+/* --------------------------------------
+  1500PX
+----------------------------------------- */
+/* @media screen and (min-width: 1500px){} */
+
+
+
+
+/* background-color: aliceblue; */
+/* background-color: antiquewhite; */
+/* background-color: azure; */
+/* background-color: beige; */
+/* background-color: bisque; */
+/* background-color: blanchedalmond; */
+/* background-color: cornsilk; */
+/* background-color: floralwhite; */
+/* background-color: ghostwhite; */
+/* background-color: honeydew; */
+/* background-color: ivory; */
+/* background-color: lightcyan; */
+/* background-color: linen; */
+/* background-color: mintcream; */
+/* background-color: mistyrose; */
+/* background-color: oldlace; */
+/* background-color: papayawhip; */
+/* background-color: seashell; */
+/* background-color: snow; */
+/* background-color: white; */
+/* background-color: whitesmoke; */
+
+
+/* background-color: darkgray; */
+/* background-color: darkgrey; */
+/* background-color: dimgray; */
+/* background-color: gainsboro; */
+/* background-color: lavender; */
+/* background-color: lavenderblush; */
+/* background-color: lightgray; */
+/* background-color: lightslategray; */
+
+
+/* COLOR BRAND -  PALETTE */
+/* #9D582E */
+/* #E5E1D6 */
+/* #F7F9F6 */
+/* #5C4736 */
+/* #570209 */
+
+/* TONES OF MAROON */
+/* #570209 */
+/* #5B0D14 */
+/* #5E191F */
+/* #622429 */
+/* #663034 */
+/* #6A3B3F */
+/* #6D474A */
+/* #715255 */
+/* #755E60 */
+/* #79696A */
+/* #7C7575 */
+/* #808080 */
+
+/* SHADES OF MAROON */
+/* #570209 */
+/* #520208 */
+/* #4A0208 */
+/* #410107 */
+/* #390106 */
+/* #310105 */
+/* #290104 */
+/* #210103 */
+/* #190103 */
+/* #100002 */
+/* #080001 */
+/* #000000 */
